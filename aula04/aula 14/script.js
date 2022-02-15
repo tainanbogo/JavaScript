@@ -1,23 +1,35 @@
-function  carregar() {
-    var msg = window.document.getElementById("msg")
-    var img = window.document.getElementById('imagem')
-    var data = new Date()
-    var hora = data.getHours()
-    //var hora = 19
+function  contar() {
+    let nI = document.getElementById('nI')
+    let nInicio = Number(nI.value)
+    let nF = document.getElementById('nF')
+    let nFim = Number(nF.value)
+    let nS = document.getElementById('nS')
+    let nSalto = Number(nS.value)
+    let res = document.getElementById('res')
 
-    if (hora >= 0 && hora < 12) {
-        msg.innerHTML = `Agora são ${hora} horas. Bom dia!`
-        img.src = 'manha.png' 
-        document.body.style.background = '#f5c356'
-        
-    } else if (hora >= 12 && hora < 18) {
-        msg.innerHTML = `Agora são ${hora} horas. Boa Tarde!` 
-        img.src = 'tarde.png' 
-        document.body.style.background = '#87c12e'
-        
+    if (nI.value.length == 0 || nF.value.length == 0 || nS.value.length == 0) {
+        window.alert('Preencha os Campos Requeridos!')
     } else {
-        msg.innerHTML = `Agora são ${hora} horas. Boa Noite!` 
-        img.src = 'noite.png' 
-        document.body.style.background = 'black'
+        res.innerHTML = ('Contando: ')
+        
+        if (nInicio < nFim) {
+           for (let c = nInicio; c <= nFim; c+=nSalto) {
+            res.innerHTML += ` ${c} \u{1F449}`
+        }
+    } else {
+        for (let c = nInicio; c >= nFim; c-=nSalto) {
+            res.innerHTML += ` ${c} \u{1F449}`
+        }
     }
-}
+         
+        res.innerHTML += `\u{1F3C1}`
+    }
+
+
+    
+} 
+
+
+
+
+   

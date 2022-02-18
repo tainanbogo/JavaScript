@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço Mudou</title>
+    <style>
+        body {
+            background-color: beige;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: brown;
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        div input{
+            width: 150px;
+            height: 150px;
+            margin: 20px;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Preço mudou!</h1>
+    </header>
+    <div id="botoes">
+        <p>Clique no botão abaixo para verificar a oscilação de preço do seu produto!</p>
+        <input type="button" value="Verificar" onclick="clicar()">
+    </div>
+    <div id="res">
+
+    </div>
+
+    <script>
+        function clicar() {
+            var preco1 = Number(window.prompt('Digite o preço anterior do produto'))
+            var res = document.getElementById('res')
+
+            if (preco1 == "") {
+                window.alert('Não entendi. Digite novamente o preço do seu produto!')
+            } else {
+                var preco2 = Number(window.prompt('Digite agora o preço atual do seu produto: '))
+
+                if (preco2 == "") {
+                    window.alert('Você deve informar o preço anterior e o preço atual do seu produto. Vamos começar novamente.')
+                } else {
+                    if (preco1 > preco2) {
+                        var desconto = (preco1 - preco2)
+                        res.innerHTML = `Seu produto custava R$${preco1} e agora custa R$${preco2}. Você teve um desconto de R$${desconto}, ou seja menos ${(desconto * 100) /  preco1}% do Valor original!`
+                        
+                    } else if (preco2 > preco1) {
+                        var aumento = (preco2 - preco1)
+                        res.innerHTML = `Seu produto custava R$${preco1} e agora custa R$${preco2}. Ele teve um aumento de R$${aumento}, ou seja mais ${(aumento * 100) /  preco1}% do Valor original!`
+                    } else {
+                        res.innerHTML = "O preço do seu produto continua o mesmo!"
+                    }
+                }
+            }
+            
+        }    
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano Bissexto!</title>
+    <style>
+        body {
+            background-color: beige;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: brown;
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        div input{
+            width: 150px;
+            height: 150px;
+            margin: 20px;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Verificando Ano Bissexto</h1>
+    </header>
+    <div id="botoes">
+        <p>Clique no botão abaixo e digite o ano que você quer verificar!</p>
+        <input type="button" value="Verificar" onclick="clicar()">
+    </div>
+
+    <script>
+        function clicar() {
+            var ano = Number(window.prompt('Digite o ano que você deseja verificar:'))
+            if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0) ){
+
+                window.alert(`O ano ${ano} é Bissexto!`)
+
+            } else {
+                window.alert(`O ano ${ano} não é Bissexto!`)
+            }
+        }
+
+    </script>
+</body>
+</html>

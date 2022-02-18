@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+    <style>
+        body {
+            background-color: beige;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: brown;
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        div input{
+            width: 200px;
+            height: 80px;
+            margin: 20px;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Conversor de Medidas</h1>
+    </header>
+    <section>
+        <div id="botoes">
+            <p>Clique no botão abaixo para iniciar!</p>
+        
+            <input type="button" value="Converter" onclick="clicar()">
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+
+    <script>
+        function clicar() {
+            var distancia = Number(window.prompt('Digite uma distância em metros (m)'))
+
+            let km = distancia / 1000
+            let cm = distancia * 100
+            let milha = distancia / 1609
+            let polegada = distancia * 39.37 
+
+            var res = document.getElementById('res')
+
+            res.innerHTML = `A distancia ${distancia} metros é igual a: 
+            <br> ${km} KM.
+            <br> ${cm} cm.
+            <br> ${milha} Milhas.
+            <br> ${polegada} Polegadas. `
+
+        }
+
+    </script>
+</body>
+</html>

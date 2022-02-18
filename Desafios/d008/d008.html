@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descontão!</title>
+    <style>
+        body {
+            background-color: beige;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: brown;
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        div input{
+            width: 200px;
+            height: 80px;
+            margin: 20px;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vamos Calcular seu Desconto!</h1>
+    </header>
+    <section>
+        <div id="botoes">
+            <p>Clique no botão abaixo para iniciar!</p>
+        
+            <input type="button" value="Desconto de 10%" onclick="clicar()">
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+
+    <script>
+
+       
+
+        function clicar() {
+             let produto = window.prompt('Qual é o produto que você está comprando?')
+
+             if (produto.length == 0) {
+                 window.alert('Não entendi o nome do produto, digite novamente!')
+             } else {
+                let valor = Number(window.prompt(`Qual é o valor de ${produto}?`))
+
+            let desconto = valor * 0.9
+
+            var res = document.getElementById('res')
+
+            res.innerHTML = `Você comprou ${produto} que custava R$${valor}. Com o desconto de 10% você pagará apenas R$${desconto}.`
+
+             }
+
+        }
+
+    </script>
+</body>
+</html>

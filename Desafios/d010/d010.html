@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamos Calcular!</title>
+    <style>
+        body {
+            background-color: beige;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: brown;
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        div input{
+            width: 200px;
+            height: 80px;
+            margin: 20px;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Resolvendo Bhaskara</h1>
+    </header>
+    <section>
+        <div id="botoes">
+            <p>Considerando uma equação no formato ax² + bx + c = 0, aperte o botão abaixo para calcular o valor de &Delta; </p>
+        
+            <input type="button" value="Começar!" onclick="clicar()">
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+
+    <script>
+
+          function clicar() {
+             let a = Number(window.prompt("Qual valor de a?"))
+
+             if (a == " ") {
+                 window.alert('Digite um valor para a')
+             } else {
+                let b = Number(window.prompt(`Digite um valor para b`))
+                if (b == "") {
+                    window.alert('Você não digitou um valor para b. Vamos começar novamente!')
+                } else {
+                    let c = Number(window.prompt('Digite um valor para c'))
+                    if (c == '') {
+                        window.alert('Você não digitou um valor para c. Vamos começar novamente!')
+                    } else {
+                        var delta = b * b - 4 * a * c
+                        var res = document.getElementById('res')
+                        res.innerHTML = `Os valores atribuídos para a, b e c foram respectivamente: <br>
+                        - ${a} <br>
+                        - ${b} <br>
+                        - ${c} <br>
+                        A equação a ser resolvida será: ${a}x² + ${b}x + ${c} = 0 <br>
+                        O valor de &Delta; é: ${delta}  `
+                    }
+                }
+
+            
+
+             }
+
+        }
+
+    </script>
+</body>
+</html>
